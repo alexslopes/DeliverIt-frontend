@@ -1,0 +1,40 @@
+<div class="form-size">
+    <form novalidate [formGroup]="paymentForm" (ngSubmit)="onSubmit()">
+        <p>
+        <mat-form-field appearance="fill">
+          <mat-label>Valor Original</mat-label>
+          <input matInput formControlName="valorOriginal" placeholder="Valor Original" type="number" pattern="^\d*(\.\d{0,2})?$" required>
+          <!--<mat-error *ngIf="formErrors.description">
+            {{ formErrors.description }}
+          </mat-error>-->
+        </mat-form-field>
+      </p>
+
+      <p>
+        <mat-form-field appearance="fill">
+          <mat-label>Data Vencimento</mat-label>
+          <input matInput formControlName="dataVencimento" placeholder="Data Vencimento" type="date" required>
+          <!--<mat-error *ngIf="formErrors.description">
+            {{ formErrors.description }}
+          </mat-error>-->
+        </mat-form-field>
+      </p>
+
+      <p>
+        <mat-form-field appearance="fill">
+          <mat-label>Data Pagamento</mat-label>
+          <input matInput formControlName="dataPagamento" placeholder="Data Pagamento" type="date" required>
+          <!--<mat-error *ngIf="formErrors.description">
+            {{ formErrors.description }}
+          </mat-error>-->
+        </mat-form-field>
+      </p>
+
+      <button type="submit" mat-button class="background-primary text-floral-white">Submit</button>
+      </form>
+
+</div>
+
+<button type="submit" mat-button class="background-primary text-floral-white" (click) = "obterPagamentos()">Obter Pagamentos</button>
+
+
