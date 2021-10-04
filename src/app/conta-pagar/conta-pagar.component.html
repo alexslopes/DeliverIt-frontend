@@ -1,12 +1,16 @@
 <div class="form-size">
     <form novalidate [formGroup]="paymentForm" (ngSubmit)="onSubmit()">
+      <p>
+        <mat-form-field appearance="fill">
+          <mat-label>Nome</mat-label>
+          <input matInput formControlName="nome" placeholder="Nome" type="text" required>
+        </mat-form-field>
+      </p>
+
         <p>
         <mat-form-field appearance="fill">
           <mat-label>Valor Original</mat-label>
           <input matInput formControlName="valorOriginal" placeholder="Valor Original" type="number" pattern="^\d*(\.\d{0,2})?$" required>
-          <!--<mat-error *ngIf="formErrors.description">
-            {{ formErrors.description }}
-          </mat-error>-->
         </mat-form-field>
       </p>
 
@@ -14,9 +18,6 @@
         <mat-form-field appearance="fill">
           <mat-label>Data Vencimento</mat-label>
           <input matInput formControlName="dataVencimento" placeholder="Data Vencimento" type="date" required>
-          <!--<mat-error *ngIf="formErrors.description">
-            {{ formErrors.description }}
-          </mat-error>-->
         </mat-form-field>
       </p>
 
@@ -24,9 +25,6 @@
         <mat-form-field appearance="fill">
           <mat-label>Data Pagamento</mat-label>
           <input matInput formControlName="dataPagamento" placeholder="Data Pagamento" type="date" required>
-          <!--<mat-error *ngIf="formErrors.description">
-            {{ formErrors.description }}
-          </mat-error>-->
         </mat-form-field>
       </p>
 
@@ -39,6 +37,7 @@
 
 <table class="form-size">
   <tr>
+    <th>Nome</th>
     <th>Valor Original</th>
     <th>Valor Corrigido</th>
     <th>Data Vencimento</th>
@@ -48,6 +47,7 @@
     <th>Juros</th>
   </tr>
   <tr *ngFor="let pagamento of listaPagamentos">
+    <td>{{pagamento.nome}}</td>
     <td>{{pagamento.valorOriginal}}</td>
     <td>{{pagamento.valorCorrigido}}</td>
     <td>{{pagamento.dataVencimento}}</td>

@@ -26,6 +26,7 @@ export class ContaPagarComponent implements OnInit {
 
   createForm() {
     this.paymentForm = this.pf.group({
+      nome: ['', Validators.required],
       valorOriginal: ['', Validators.required],
       dataVencimento: ['', Validators.required],
       dataPagamento: ['', Validators.required]
