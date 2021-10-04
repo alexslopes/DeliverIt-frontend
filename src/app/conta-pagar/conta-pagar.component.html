@@ -37,4 +37,23 @@
 
 <button type="submit" mat-button class="background-primary text-floral-white" (click) = "obterPagamentos()">Obter Pagamentos</button>
 
-
+<table class="form-size">
+  <tr>
+    <th>Valor Original</th>
+    <th>Calor Corrigido</th>
+    <th>Data Vencimento</th>
+    <th>Data Pagamento</th>
+    <th>Dias em Atraso</th>
+    <th>Multa</th>
+    <th>Juros</th>
+  </tr>
+  <tr *ngFor="let pagamento of listaPagamentos">
+    <td>{{pagamento.valorOriginal}}</td>
+    <td>{{pagamento.valorCorrigido}}</td>
+    <td>{{pagamento.dataVencimento}}</td>
+    <td>{{pagamento.dataPagamento}}</td>
+    <td>{{pagamento.diasEmAtraso}}</td>
+    <td>{{pagamento.multa}}</td>
+    <td>{{pagamento.juros}}</td>
+  </tr>
+</table>

@@ -12,6 +12,7 @@ export class ContaPagarComponent implements OnInit {
 
   paymentForm: FormGroup;
   contaPagar: ContaPagar;
+  listaPagamentos: any;
 
   constructor(
     private pf: FormBuilder,
@@ -45,8 +46,8 @@ export class ContaPagarComponent implements OnInit {
 
   obterPagamentos() {
     this.dadosPagamentoService.obterPagamento()
-    .subscribe(contaPagar => {
-      console.log(contaPagar);
+    .subscribe(contasPagar => {
+      this.listaPagamentos = contasPagar;
     })
   }
 
